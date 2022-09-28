@@ -28,6 +28,19 @@ import isArrayLike from './isArrayLike.js'
  * keys('hi')
  * // => ['0', '1']
  */
+
+// 使用Object转换
+// ES5 里，如果此方法的参数不是对象（而是一个原始值），那么它会抛出 TypeError
+// 在 ES2015 中，非对象的参数将被强制转换为一个对象。
+/**
+ *
+// In ES5
+Object.keys('foo');  // TypeError: "foo" is not an object
+
+// In ES2015+
+Object.keys('foo');  // ["0", "1", "2"]
+
+ */
 function keys(object) {
   return isArrayLike(object)
     ? arrayLikeKeys(object)

@@ -23,6 +23,8 @@ const nodeIsTypedArray = nodeTypes && nodeTypes.isTypedArray
  * isTypedArray([])
  * // => false
  */
+// 如果是在node环境中，则直接调用util的 isTypedArray 方法来检测
+// 浏览器环境中，则使用 Object.prototype.toString ，然后通过正则来匹配
 const isTypedArray = nodeIsTypedArray
   ? (value) => nodeIsTypedArray(value)
   : (value) => isObjectLike(value) && reTypedTag.test(getTag(value))
