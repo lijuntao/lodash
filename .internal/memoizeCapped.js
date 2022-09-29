@@ -11,6 +11,9 @@ const MAX_MEMOIZE_SIZE = 500
  * @param {Function} func The function to have its output memoized.
  * @returns {Function} Returns the new memoized function.
  */
+
+// memoizeCapped 其实调用的是 memoize ，
+// 会设置 memoize 的 resolver 函数，限制缓存的数量，避免缓存太大，占用太多的内存
 function memoizeCapped(func) {
   const result = memoize(func, (key) => {
     const { cache } = result

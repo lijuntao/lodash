@@ -15,7 +15,9 @@ const hasOwnProperty = Object.prototype.hasOwnProperty
 function assignValue(object, key, value) {
   const objValue = object[key]
 
+  // 如果相应的key在对象上不存在并且要设置的值和原来值不相等
   if (!(hasOwnProperty.call(object, key) && eq(objValue, value))) {
+    // (1 / value) === (1 / objValue) 处理0与-0问题
     if (value !== 0 || (1 / value) === (1 / objValue)) {
       baseAssignValue(object, key, value)
     }

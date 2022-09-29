@@ -24,6 +24,8 @@ import baseGet from './.internal/baseGet.js'
  * get(object, 'a.b.c', 'default')
  * // => 'default'
  */
+
+// 如果对象存在并且路径上有值，则返回路径所在的值，如果不存在则返回默认值
 function get(object, path, defaultValue) {
   const result = object == null ? undefined : baseGet(object, path)
   return result === undefined ? defaultValue : result

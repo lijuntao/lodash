@@ -8,6 +8,9 @@ import eq from '../eq.js'
  * @param {*} key The key to search for.
  * @returns {number} Returns the index of the matched value, else `-1`.
  */
+// 找出指定的 key 在数组中的索引值
+// var caches = [['test1', 1],['test2',2],['test3',3]]
+// assocIndexOf(caches,'test1')
 function assocIndexOf(array, key) {
   let { length } = array
   while (length--) {

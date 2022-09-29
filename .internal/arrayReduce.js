@@ -13,6 +13,7 @@ function arrayReduce(array, iteratee, accumulator, initAccum) {
   let index = -1
   const length = array == null ? 0 : array.length
 
+  // initAccum 是否使用数组的第一个元素作为初始值
   if (initAccum && length) {
     accumulator = array[++index]
   }

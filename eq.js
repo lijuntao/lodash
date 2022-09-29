@@ -28,6 +28,9 @@
  * eq(NaN, NaN)
  * // => true
  */
+
+// value === other 不能判断NaN
+// eq判断如果两个值都是NaN 也需要返回true，所以需要增加一层判断 (value !== value && other !== other)
 function eq(value, other) {
   return value === other || (value !== value && other !== other)
 }

@@ -9,6 +9,7 @@
  * @param {Function} keysFunc The function to get the keys of `object`.
  * @returns {Object} Returns `object`.
  */
+// 对象属性和值遍历
 function baseFor(object, iteratee, keysFunc) {
   const iterable = Object(object)
   const props = keysFunc(object)
@@ -17,6 +18,7 @@ function baseFor(object, iteratee, keysFunc) {
 
   while (length--) {
     const key = props[++index]
+    // 如果返回 false，则中止遍历
     if (iteratee(iterable[key], key, iterable) === false) {
       break
     }
