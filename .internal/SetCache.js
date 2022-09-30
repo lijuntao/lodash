@@ -16,6 +16,7 @@ class SetCache {
     let index = -1
     const length = values == null ? 0 : values.length
 
+    // SetCache 其实调用的是 MapCache 类
     this.__data__ = new MapCache
     while (++index < length) {
       this.add(values[index])
@@ -31,6 +32,8 @@ class SetCache {
    * @returns {Object} Returns the cache instance.
    */
   add(value) {
+    // 将所有的key对应的值都是标准undefined 值 HASH_UNDEFINED
+    // 防止在判断是够存在值的时候出错，hash的has判断值是否存在，是与undefined比较
     this.__data__.set(value, HASH_UNDEFINED)
     return this
   }

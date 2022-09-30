@@ -20,6 +20,8 @@
  * isObjectLike(null)
  * // => false
  */
+
+// 是否是一个类对象
 function isObjectLike(value) {
   return typeof value === 'object' && value !== null
 }

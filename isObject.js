@@ -21,6 +21,18 @@
  * isObject(null)
  * // => false
  */
+// 是否是一个对象
+// 所有使用 new 调用的构造函数都将返回非基本类型（"object" 或 "function"）
+// const str = new String("String");
+// const num = new Number(100);
+
+// typeof str; // "object"
+// typeof num; // "object"
+
+// const func = new Function();
+
+// typeof func; // "function"
+
 function isObject(value) {
   const type = typeof value
   return value != null && (type === 'object' || type === 'function')

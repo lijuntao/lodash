@@ -8,6 +8,7 @@ import isObject from '../isObject.js'
  * @returns {boolean} Returns `true` if `value` if suitable for strict
  *  equality comparisons, else `false`.
  */
+// 判断一个值是否可以使用 === 比较
 function isStrictComparable(value) {
   return value === value && !isObject(value)
 }

@@ -6,6 +6,7 @@
  * @param {Function} iteratee The function invoked per iteration.
  * @returns {number} Returns the sum.
  */
+// 累加
 function baseSum(array, iteratee) {
   let result
 

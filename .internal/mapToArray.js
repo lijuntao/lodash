@@ -5,6 +5,8 @@
  * @param {Object} map The map to convert.
  * @returns {Array} Returns the key-value pairs.
  */
+// 将map转为数组
+// 数组的每一项都是key，value组合
 function mapToArray(map) {
   let index = -1
   const result = new Array(map.size)

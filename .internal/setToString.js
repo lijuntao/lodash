@@ -6,6 +6,7 @@
  * @param {Function} string The `toString` result.
  * @returns {Function} Returns `func`.
  */
+// 设置一个函数的toString方法，该方法返回传入的字符串
 function setToString(func, string) {
   return Object.defineProperty(func, 'toString', {
     'configurable': true,

@@ -8,6 +8,7 @@ import keys from '../keys.js'
  * @param {Object} object The object to query.
  * @returns {Array} Returns the array of property names and symbols.
  */
+// 类似于keys，但是keys不会获取对象的symbol属性，所以需要调用getSymbols获取对象的symbol属性
 function getAllKeys(object) {
   const result = keys(object)
   if (!Array.isArray(object)) {

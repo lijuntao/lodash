@@ -41,13 +41,17 @@ class ListCache {
     const data = this.__data__
     const index = assocIndexOf(data, key)
 
+    // 如果没有找到，则直接返回false
     if (index < 0) {
       return false
     }
     const lastIndex = data.length - 1
+    // 如果是最后一个数据，则使用pop删除数据
+    // 因为 pop 的性能比 splice 好
     if (index == lastIndex) {
       data.pop()
     } else {
+      // 如果不是，则使用splice删除
       data.splice(index, 1)
     }
     --this.size
@@ -90,10 +94,12 @@ class ListCache {
     const data = this.__data__
     const index = assocIndexOf(data, key)
 
+    // 如果没有找到则push进新的数据
     if (index < 0) {
       ++this.size
       data.push([key, value])
     } else {
+      // 如果找到了，则更新数据
       data[index][1] = value
     }
     return this

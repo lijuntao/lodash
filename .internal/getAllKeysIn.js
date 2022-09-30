@@ -7,6 +7,7 @@ import getSymbolsIn from './getSymbolsIn.js'
  * @param {Object} object The object to query.
  * @returns {Array} Returns the array of property names and symbols.
  */
+// 类似于getAllKeys，但是getAllKeysIn会获取继承属性
 function getAllKeysIn(object) {
   const result = []
   for (const key in object) {
